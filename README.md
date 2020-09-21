@@ -1,6 +1,6 @@
 # Frontend Mentor - PayAPI multi-page website
 
-![Design preview for the PayAPI multi-page website coding challenge](.public/preview.jpg)
+![Design preview for the PayAPI multi-page website coding challenge](./public/preview.jpg)
 
 ## Welcome! 👋
 
