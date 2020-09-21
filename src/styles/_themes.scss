@@ -1,0 +1,12 @@
+$colors: (
+    dark-pink: hsl(337, 48%, 49%),
+    link-water-white: hsl(220, 60%, 99%),
+    san-juan-blue: hsl(207, 33%, 32%),
+    mirage-blue: hsl(207, 27%, 15%),
+    charm-pink: hsl(337, 60%, 64%),
+    light-san-juan-blue: hsl(207, 16%, 50%)
+);
+
+@function get-color($color) {
+	@return map-get($colors, $color);
+} 
