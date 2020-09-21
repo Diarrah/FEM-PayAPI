@@ -1,0 +1,26 @@
+@import 'styles/global';
+@import 'styles/themes';
+@import 'styles/typography';
+
+// Home
+@import 'styles/Home/hero';
+@import 'styles/Home/workPartners';
+@import 'styles/Home//appAttributes';
+
+// Pricing
+@import 'styles/Pricing/pricing';
+
+// About
+@import 'styles/About/aboutPage';
+
+// Contact
+@import 'styles/Contact/contactPage';
+
+//Shared
+@import 'styles/Shared/navbar';
+@import 'styles/Shared/pageLinks';
+@import 'styles/Shared/button';
+@import 'styles/Shared/cta';
+@import 'styles/Shared/demoForm';
+@import 'styles/Shared/partnersGrid';
+@import 'styles/Shared/footer';
