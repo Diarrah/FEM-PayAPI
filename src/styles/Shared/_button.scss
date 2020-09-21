@@ -1,0 +1,34 @@
+.btn {
+    border-radius: 50px;
+    padding: 14px 20px;
+    letter-spacing: 1px;
+    font-size: 13.5px;
+    border: 1px solid;
+    cursor: pointer;
+    transition: .15s;
+
+    &--pink {
+        background-color: get-color(dark-pink);
+        border-color: get-color(dark-pink);
+        color: white;
+
+        &:hover { 
+            filter: brightness(1.1)
+        }
+    }
+
+    &--transparent-white {
+        &:hover {
+            background-color: white;
+            color: get-color(mirage-blue);
+        }
+    }
+
+    &--transparent-blue {
+        &:hover {
+            background-color: get-color(mirage-blue);
+            border-color: get-color(mirage-blue);
+            color: white;
+        }
+    }
+}

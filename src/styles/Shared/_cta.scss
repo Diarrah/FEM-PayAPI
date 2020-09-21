@@ -1,0 +1,15 @@
+.cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 75px 0;
+
+    &__heading {
+        @include h2();
+        flex: 0 0 46%;
+    }
+
+    .demo__form {
+        width: 50%;
+    }
+}

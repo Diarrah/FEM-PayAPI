@@ -1,0 +1,12 @@
+.page__links {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin-left: 75px;
+
+    li {
+        text-transform: capitalize;
+        font-weight: 400;
+        font-size: 13px;
+    }
+}

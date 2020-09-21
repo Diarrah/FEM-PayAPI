@@ -1,0 +1,41 @@
+.app__attribute {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__textbox {
+        flex: 0 0 45%;
+        max-width: 550px;
+
+        &__heading {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__image__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 45%;
+    }
+
+    &:nth-of-type(1) {
+        flex-direction: row-reverse;
+    }
+
+    &__grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 60px 0 25px;
+
+        .grid__card {
+            width: calc(92% / 3);
+            text-align: center;
+
+            &__heading { margin: 15px 0; }
+
+            &__subheading { font-weight: 400; }
+        }
+    }
+}

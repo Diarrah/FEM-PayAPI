@@ -1,0 +1,62 @@
+.about {
+    &__header {
+        margin: 75px 0;
+
+        &__heading {
+            max-width: 75%;
+            width: 100%;
+            margin-bottom: 75px;
+            letter-spacing: 2px;
+        }
+    }
+
+    &__company__card {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        &:last-of-type { margin-bottom: 0 }
+
+        &__heading {
+            flex: 0 0 20%;
+        }
+
+        &__subheading {
+            flex: 0 0 70%;
+        }
+    }
+
+    &__middle__image__container {
+        position: relative;
+        display: flex;
+        width: calc(100% + 18vw);
+        left: -9vw;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__metadata__list {
+        display: flex;
+        justify-content: space-between;
+        margin: 75px 0;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            width: calc(95% / 3);
+            padding: 20px 0;
+            border-top: 1px solid rgba(get-color(light-san-juan-blue), .5);
+            border-bottom: 1px solid rgba(get-color(light-san-juan-blue), .5);
+
+            small { font-weight: 400 }
+
+            .number {
+                @include h1();
+                color: get-color(dark-pink);
+                margin-top: 10px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+}

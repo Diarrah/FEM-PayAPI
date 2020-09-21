@@ -1,0 +1,18 @@
+.partners {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    background-color: get-color(mirage-blue);
+    color: white;
+    width: calc(100% + 18vw);
+    left: -9vw;
+    padding: 100px 9vw;
+
+    &__textbox {
+        flex: 0 0 40%;
+
+        &__subheading {
+            padding: 30px 0 50px;
+        }
+    }
+}

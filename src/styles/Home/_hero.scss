@@ -1,0 +1,27 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -40px;
+
+    &__textbox {
+        flex: 0 0 50%;
+
+        &__heading {
+            @include h1--hero();
+        }
+
+        &__contact-us { 
+            display: flex;
+
+            a {
+                margin-left: 10px;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__image__container {
+        display: flex;
+    }
+}

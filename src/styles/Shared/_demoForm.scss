@@ -1,0 +1,24 @@
+.demo__form {
+    position: relative;
+    display: flex;
+    height: 50px;
+    margin: 40px 0 15px;
+
+    input {
+        border-radius: 50px;
+        border: 0;
+        font-family: inherit;
+        width: 100%; height: 100%;
+        padding-left: 30px;
+        box-shadow: 1px 3px 10px 1px rgba(get-color(san-juan-blue), .25);
+        &::placeholder { opacity: .65 }
+    }
+
+    .btn {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        right: 0;
+        height: 100%;
+    }
+}
