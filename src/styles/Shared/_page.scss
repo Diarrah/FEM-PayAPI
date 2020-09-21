@@ -1,0 +1,18 @@
+.page {
+    position: relative;
+
+    &::before {
+        content: url(../../images/shared/desktop/bg-pattern-circle.svg);
+        position: absolute;
+        top: -152px; right: -25vw;
+        transform: translateY(-65%);
+        z-index: -1;
+    }
+
+    &--home {
+        &::before {
+            transform: translateY(-20%);
+            right: -17vw;
+        }
+    }
+}
