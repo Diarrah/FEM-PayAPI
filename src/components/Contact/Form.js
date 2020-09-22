@@ -24,6 +24,11 @@ const Form = () => {
         })
     }
 
+    function validateEmail(email) {
+        let validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return validEmail.test(String(email).toLowerCase());
+    }
+
     function isValid() {
         let email = formElement.current.children[1];
 
@@ -39,12 +44,6 @@ const Form = () => {
         } else {
             isEmpty(email.children[0].value.trim())
         }
-    
-        // Helper Regex function for email validation:
-        function validateEmail(email) {
-            let validEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return validEmail.test(String(email).toLowerCase());
-        }
     }
 
     const handleFormSubmit = e => {
@@ -55,7 +54,13 @@ const Form = () => {
         isValid()
 
         inputElements.forEach(input => input.addEventListener('focusin', () => {
-            input.classList.remove('invalid')
+            if (input.children[0].type !== 'email') {
+                input.classList.remove('invalid') 
+            } else if (input.children[0].type === 'email' && !validateEmail(input.children[0].value) && input.children[0].value !== '') {
+                inputElements[1].classList.add('invalid')
+            } else {
+                input.classList.remove('invalid')
+            }   
         }))
 
         if (!inputElements.some(input => input.classList.contains('invalid'))) {
