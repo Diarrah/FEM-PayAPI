@@ -8,7 +8,7 @@ const AppAttributes = () => {
     let consumerText = "It’s easier to set up secure bank payments with us through a flow designed with the user experience in mind. Customers could instantly authenticate their account.";
 
     return (
-        <div style={{ padding: "100px 0 30px" }}>
+        <main className="home__main">
             <div className="app__attribute">
                 <div className="app__attribute__textbox">
                     <h2 className="app__attribute__textbox__heading">Easy to implement</h2>
@@ -36,7 +36,7 @@ const AppAttributes = () => {
                 <Card icon={image.banking} heading="Banking & Coverage" subheading={bankingText} />
                 <Card icon={image.consumer} heading="Consumer Payments" subheading={consumerText} />
             </div>
-        </div>
+        </main>
     )
 }
 
