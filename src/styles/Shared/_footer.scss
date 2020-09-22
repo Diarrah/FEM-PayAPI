@@ -31,4 +31,25 @@
             }
         }
     }
+
+    @include rwd(600) {
+        flex-direction: column;
+        padding: 40px 9vw;
+
+        .page__links {
+            margin: 15px 0 25px;
+            flex-direction: column;
+            align-items: center;
+
+            li {
+                color: get-color(link-water-white);
+                margin-bottom: 12px;
+                &:last-of-type { margin-bottom: 0 }
+            }
+        }
+
+        &__socials {
+            margin-left: 0;
+        }
+    }
 }

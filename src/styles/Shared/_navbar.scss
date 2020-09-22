@@ -1,11 +1,102 @@
 .navbar {
     display: flex;
+    position: relative;
     align-items: center;
     height: 92px;
     margin-bottom: 60px;
 
+    &__links--mobile {
+        display: none;
+         &-btn { display: none !important }
+    }
+
     .btn--pink {
         margin-left: auto;
         padding: 12px 20px; 
+    }
+
+    @include rwd(715) {
+        &__links, .btn--pink { display: none }
+
+        &__links--mobile {
+            display: block;
+            position: fixed;
+            top: 0; right: 0vw;
+            width: 85vw; height: 100vh;
+            background-color: get-color(mirage-blue);
+            padding: 92px 30px 0;
+            transform: translateX(87vw);
+            transition: .6s ease-in-out;
+            transition-delay: 450ms;
+            z-index: 3;
+
+            &.deployed {
+                transform: translateX(0vw);
+                transition-delay: 0ms;
+            }
+
+            hr {
+                border: 0;
+                height: 1px;
+                background-color: get-color(san-juan-blue);
+            }
+
+            .page__links {
+                flex-direction: column;
+                align-items: center;
+                margin: 50px auto 65px;
+
+                li {
+                    color: get-color(link-water-white);
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                    &:last-of-type { margin-bottom: 0 }
+                }
+            }
+
+            .btn--pink { 
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+
+        &__links--mobile-btn {
+            position: relative;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-left: auto;
+            border-radius: 50%;
+            height: 60px; width: 60px;
+            z-index: 5;
+            cursor: pointer;
+
+            & > * {
+                transition: .2s;
+                padding: 25px;
+            }
+            
+            .open:hover { background-color: white }
+
+            .close { 
+                display: none;
+
+                &:hover {
+                    background-color: rgba(get-color(dark-pink), .8);
+                }
+
+                &.spin {
+                    transform: rotate(360deg);
+                    transition: transform .85s;
+                }
+            }
+
+            &.change {
+                .open { display: none }
+                .close { display: block }
+            }
+        }
     }
 }

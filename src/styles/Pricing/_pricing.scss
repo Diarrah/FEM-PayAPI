@@ -1,21 +1,37 @@
-.price__page__heading { margin-bottom: 55px }
+.price__page__heading { 
+    margin-bottom: 55px;
+
+    @include rwd(750) {
+        text-align: center;
+        margin-bottom: 75px;
+        letter-spacing: 2px;
+    }
+}
 
 .price__card__container {
     display: flex;
     justify-content: space-between;
 
     .price__card {
-        width: calc(95% / 3);
+        width: calc(92% / 3);
 
         &__heading {
             color: get-color(dark-pink);
             font-weight: normal;
-            font-size: 2.7em;
+            font-size: 2.6em;
+
+            @include rwd(1015) {
+                font-size: 2em;
+            }
         }
 
         &__description {
-            margin: 12px 0 20px;
+            display: flex;
+            align-items: center;
+            line-height: 1.6;
             font-weight: 400;
+            height: 100px;
+            padding: 10px 0;
         }
 
         &__price { 
@@ -57,6 +73,66 @@
                         left: 0;
                     }
                 }
+            }
+        }
+
+        &:last-of-type .price__card__heading {
+            width: calc(100% + 20px) !important;
+        }
+    }
+
+    @include rwd(850) {
+        .price__card {
+            width: calc(87% / 3);
+
+            &__heading, 
+            &__description, 
+            &__price { text-align: center }
+
+            &__description {
+                height: 130px;
+            }
+
+            &__price {
+                justify-content: center;
+            }
+
+            .price__card__feature {
+                position: relative;
+                width: max-content;
+                padding-left: 0;
+                left: 35%;
+
+                &--available .fas.fa-check {
+                    left: -30px;
+                }
+            }
+        }
+    }
+
+    @include rwd(750) {
+        flex-direction: column;
+
+        .price__card {
+            width: 100%;
+            margin-bottom: 90px;
+            &:last-of-type { margin-bottom: 50px }
+
+            &__description {
+                height: auto;
+                text-align: center;
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+
+            .price__card__feature {
+                left: 43%;
+            }
+
+            .btn {
+                display: flex;
+                margin: -10px auto 0;
+                width: max-content;
             }
         }
     }

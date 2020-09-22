@@ -7,12 +7,62 @@
     width: calc(100% + 18vw);
     left: -9vw;
     padding: 100px 9vw;
+    overflow: hidden;
 
     &__textbox {
         flex: 0 0 40%;
 
-        &__subheading {
-            padding: 30px 0 50px;
+        &__subheading { padding: 30px 0 50px }
+
+        .btn {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &__grid { flex: 0 0 55% }
+
+    &::before {
+        content: url(../../images//shared/desktop/bg-pattern-circle.svg);
+        position: absolute;
+        top: 0; left: -9vw;
+        transform: translateY(-40%);
+    }
+
+    @include rwd(1160) {
+        &__textbox { flex: 0 0 50% }
+
+        &__grid {
+            flex: 0 0 43%;
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-rows: repeat(3, 1fr) !important;
+        }
+    }
+
+    @include rwd(900) {
+        flex-direction: column-reverse;
+
+        &__textbox {
+            text-align: center;
+            align-self: center;
+            max-width: 600px;
+            margin-top: 60px;
+
+            &__subheading {
+                padding: 15px 0 25px;
+            }
+        }
+
+        &__grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+            grid-template-rows: repeat(2, 1fr) !important;
+        }
+    }
+
+    @include rwd(550) {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-rows: repeat(3, 1fr) !important;
         }
     }
 }

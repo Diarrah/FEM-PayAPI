@@ -3,10 +3,12 @@
         margin-bottom: 75px;
         max-width: 65%;
         width: 100%;
+
+        @include rwd(1215) { max-width: 90% }
     }
 
     &__form {
-        flex: 0 0 40%;
+        flex: 0 0 50%;
 
         &__control {
             display: flex;
@@ -79,15 +81,78 @@
                     cursor: pointer;
                 }
             }
+
+            &.invalid {
+                input, textarea {
+                    border-bottom: 1px solid red;
+                    color: rgba(red, .5);
+                    &::placeholder {
+                        color: rgba(red, .5)
+                    }
+                }
+                .error__msg { display: flex }
+            }
         }
     }
 
     &__investors__grid {
-        flex: 0 0 45%;
+        flex: 0 0 40%;
         align-self: center;
 
         &__heading {
             margin-bottom: 30px;
         }
+
+        @include rwd(1490) {
+            &__heading {
+                margin-bottom: 50px;
+            }
+            .partners__grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+            }
+        }
+    }
+
+    @include rwd(950) {
+        &__heading {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        &__form {
+            max-width: 550px;
+            margin: -40px auto 50px;
+        }
+
+        &__investors__grid {
+            margin: 75px 0;
+
+            &__heading {
+                text-align: center;
+                max-width: 550px;
+            }
+
+            .partners__grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                grid-template-rows: repeat(2, 1fr) !important;
+            }
+        }
+    }
+
+    @include rwd(560) {
+        &__investors__grid .partners__grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-rows: repeat(3, 1fr) !important;
+        }
+    }
+}
+
+.contact__main {
+    display: flex;
+    justify-content: space-between;
+
+    @include rwd(950) {
+        flex-direction: column;
     }
 }

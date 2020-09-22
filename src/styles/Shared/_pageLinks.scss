@@ -9,4 +9,9 @@
         font-weight: 400;
         font-size: 13px;
     }
+
+    @include rwd(850) {
+        margin-left: 40px;
+        width: 200px;
+    }
 }

@@ -15,4 +15,28 @@
             right: -17vw;
         }
     }
+
+    @include rwd(1000) {
+        &:not(.page--home)::before {
+            top: 0; right: -9vw;
+            transform: translateX(55%) translateY(-90%);
+        }
+    }
+
+    @include rwd(768) {
+        &--home {
+            width: calc(100% + 4vw);
+            left: -2vw;
+
+            &::before { display: none }
+
+            &::after {
+                content: url(../../images/shared/desktop/bg-pattern-circle.svg);
+                position: absolute;
+                top: -152px; left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                z-index: -1;
+            }
+        }
+    }
 }

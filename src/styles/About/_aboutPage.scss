@@ -1,6 +1,7 @@
 .about {
     &__header {
         margin: 75px 0;
+        padding: 0 75px;
 
         &__heading {
             max-width: 75%;
@@ -23,6 +24,13 @@
         &__subheading {
             flex: 0 0 70%;
         }
+
+        @include rwd(700) {
+            flex-direction: column;
+            text-align: center;
+
+            &__heading { margin-bottom: 15px }
+        }
     }
 
     &__middle__image__container {
@@ -31,8 +39,27 @@
         width: calc(100% + 18vw);
         left: -9vw;
 
-        img {
+        .image {
+            width: 100%;
             max-width: 100%;
+            object-fit: cover;
+
+            &__mobile { display: none }
+        }
+
+        &::before {
+            content: url(../../images/shared/desktop/bg-pattern-circle.svg);
+            position: absolute;
+            top: 50%; left: 0;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -1;
+        }
+
+        @include rwd(550) {
+            .image {
+                &__desktop { display: none }
+                &__mobile { display: block }
+            }
         }
     }
 
@@ -57,6 +84,45 @@
                 margin-top: 10px;
                 letter-spacing: 2px;
             }
+        }
+
+        @include rwd(600) {
+            flex-direction: column;
+            align-items: center;
+            border-top: 1px solid rgba(get-color(light-san-juan-blue), .5);
+            border-bottom: 1px solid rgba(get-color(light-san-juan-blue), .5);
+
+            &__item {
+                text-align: center;
+                border-top: 0;
+                border-bottom: 0;
+            }
+        }
+    }
+
+    &__bottom__card__container {
+        padding: 0 75px;
+    }
+
+    @include rwd(1070) {
+        &__header, &__bottom__card__container {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &__header__heading {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        &__middle__image__container::before {
+            display: none;
+        }
+
+        &__metadata__list {
+            position: relative;
+            left: -5vw;
+            width: calc(100% + 10vw);
         }
     }
 }

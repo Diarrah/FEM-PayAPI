@@ -8,7 +8,7 @@
         flex: 0 0 50%;
 
         &__heading {
-            @include h1--hero();
+            font-size: calc(2.5em + 2vw);
         }
 
         &__contact-us { 
@@ -23,5 +23,44 @@
 
     &__image__container {
         display: flex;
+    }
+
+    @include rwd(900) {
+        .demo__form {
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100px;
+
+            input, .btn { height: 42px }
+
+            .btn {
+                position: relative;
+                justify-content: center;
+                font-size: 13px;
+            }
+        }
+    }
+
+    @include rwd(731) {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-bottom: 100px;
+
+        &__textbox {
+            text-align: center;
+            margin-top: -40px;
+
+            &__contact-us {
+                justify-content: center;
+                margin-top: 30px;
+            }
+        }
+
+        &__image__container {
+            img {
+                max-width: 100%;
+                transform: translateX(7%);
+            }
+        }
     }
 }

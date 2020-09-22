@@ -30,5 +30,14 @@
             border-color: get-color(mirage-blue);
             color: white;
         }
+
+        &.valid {
+            border-color: green;
+            color: green;
+
+            &:hover {
+                background-color: white;
+            }
+        }
     }
 }

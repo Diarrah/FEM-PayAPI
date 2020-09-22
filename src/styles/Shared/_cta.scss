@@ -5,11 +5,32 @@
     margin: 75px 0;
 
     &__heading {
-        @include h2();
-        flex: 0 0 46%;
+        font-size: calc(1.7em + 2vw);
     }
 
-    .demo__form {
-        width: 50%;
+    .demo__form { width: 50% }
+
+    @include rwd(1000) {
+        flex-direction: column;
+
+        .demo__form {
+            width: 100%;
+            max-width: 650px;
+        }
+    }
+
+    @include rwd(550) {
+        .demo__form {
+            flex-direction: column;
+            justify-content: space-between;
+            height: 120px;
+
+            input, .btn { height: 50px }
+
+            .btn {
+                position: relative;
+                justify-content: center;
+            }
+        }
     }
 }
