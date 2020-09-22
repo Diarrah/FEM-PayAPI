@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+html {
+    font-family: 'Public Sans', sans-serif;
+    color: get-color(san-juan-blue);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.86;
+    overflow-x: hidden;
+
+    @include rwd(700) {
+        font-size: 14px;
+    }
+}
+
+@mixin h1--hero {
+    font-size: 4.8em;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+@mixin h1 {
+    font-size: 3.73em;
+    line-height: 1;
+
+    @include rwd(900) { font-size: 3em }
+
+    @include rwd(700) { font-size: 2.5em }
+}
+
+@mixin h2 {
+    font-size: 3.2em;
+    line-height: 1.167;
+
+    @include rwd(700) { font-size: 2em }
+}
+
+@mixin h3 {
+    font-size: 2.13em;
+    line-height: 1.25;
+
+    @include rwd(700) { font-size: 1.8em }
+}
+
+h1, 
+h2, 
+h3 { font-family: 'DM Serif Display', serif }
+
+
+h1 { @include h1() }
+h2 { @include h2() }
+h3 { @include h3() }
+
+ul { list-style: none }
+
+a {
+    text-decoration: none;
+    color: inherit;
+    &:not(.btn) {
+        display: flex;
+    }
+}
